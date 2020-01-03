@@ -8,7 +8,7 @@ pipeline{
 		}
 		stage('Build Solution'){
 			steps{
-				bat "\"${tool 'MSBuild'}\" JenkinsMultiBranchPipeLine.sln /p:Configuration=Debug /p:Platform=\"Any CPU\" 
+				bat "\"${tool 'MSBuild'}\" JenkinsMultiBranchPipeLine.sln /p:Configuration=Debug /p:Platform=\"Any CPU\""
 			}
 		}
 	}
