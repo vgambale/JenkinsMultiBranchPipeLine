@@ -9,7 +9,7 @@ pipeline{
 		stage('Build Solution'){
 			steps{
 			//	bat "\"${tool 'MSBuild'}\" JenkinsMultiBranchPipeLine.sln /p:Configuration=Debug /p:Platform=\"Any CPU\""
-				bat dotnet build C:\Users\v.gambale\source\repos\TestJenkinsBuildPipeLine\TestJenkinsBuildPipeLine\TestJenkinsBuildPipeLine.csproj
+				bat dotnet build
 			}
 		}
 	}
