@@ -6,5 +6,10 @@ pipeline{
 				checkout([$class: 'GitSCM', branches: [[name: '*/master']],userRemoteConfigs: [[url: 'https://github.com/vgambale/JenkinsMultiBranchPipeLine.git']]])
 			}
 		}
+		stage('Build Solution'){
+			steps{
+				bat "\"$(tool 'MSBuild')\" JenkinsMultiBranchPipeLine.sln /p:Configuration=Debug /p:Platform=\"Any CPU\" 
+			}
+		}
 	}
 }
