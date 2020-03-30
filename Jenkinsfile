@@ -3,7 +3,7 @@ pipeline{
 	stages{
 		stage('CheckOut Solution'){
 			steps{
-				checkout([$class: 'GitSCM', branches: [[name: '*/release']],userRemoteConfigs: [[url: 'https://github.com/vgambale/JenkinsMultiBranchPipeLine.git']]])
+				checkout([$class: 'GitSCM', branches: [[name: '*/release/4.23']],userRemoteConfigs: [[url: 'https://github.com/vgambale/JenkinsMultiBranchPipeLine.git']]])
 			}
 		}
 		stage('Build Solution'){
