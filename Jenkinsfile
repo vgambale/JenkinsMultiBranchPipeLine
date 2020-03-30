@@ -3,16 +3,7 @@ abcs = ['a', 'b', 'c']
 node('master') {
     stage('Test 1: loop of echo statements') {
         echo_all(abcs)
-    }
-    
-    stage('Test 2: loop of sh commands') {
-        loop_of_sh(abcs)
-    }
-    
-    stage('Test 3: loop with preceding SH') {
-        loop_with_preceding_sh(abcs)
-    }
-    
+    }   
     stage('Test 4: traditional for loop') {
         traditional_int_for_loop(abcs)
     }
@@ -22,23 +13,6 @@ node('master') {
 def echo_all(list) {
     list.each { item ->
         echo "Hello ${item}"
-    }
-}
-// outputs all items as expected
-
-@NonCPS
-def loop_of_sh(list) {
-    list.each { item ->
-        sh "echo Hello ${item}"
-    }
-}
-// outputs only the first item
-
-@NonCPS
-def loop_with_preceding_sh(list) {
-    sh "echo Going to echo a list"
-    list.each { item ->
-        sh "echo Hello ${item}"
     }
 }
 // outputs only the "Going to echo a list" bit
