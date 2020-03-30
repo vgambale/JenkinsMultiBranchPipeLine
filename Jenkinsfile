@@ -1,15 +1,15 @@
 pipeline{
+abcs = ['a', 'b', 'c']
 	agent any
 	stages{
-		stage('CheckOut Solution'){
-			steps{
-				checkout([$class: 'GitSCM', branches: [[name: '*/master']],userRemoteConfigs: [[url: 'https://github.com/vgambale/JenkinsMultiBranchPipeLine.git']]])
-			}
-		}
-		stage('Build Solution'){
-			steps{
-				bat "dotnet build --configuration Release"
-			}
-		}
+		stage('Test 4: traditional for loop') {
+        traditional_int_for_loop(abcs)
+    }
 	}
+	def traditional_int_for_loop(list) {
+    sh "echo Going to echo a list"
+    for (int i = 0; i < list.size(); i++) {
+        sh "echo Hello ${list[i]}"
+    }
+}
 }
